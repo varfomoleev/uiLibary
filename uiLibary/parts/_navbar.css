@@ -1,0 +1,25 @@
+.navbar {
+    display: flex;
+    flex-flow: column nowrap;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: #16182D;
+    border: 1px solid #23243E;
+    position: sticky;
+    top: 30px;
+}
+
+.navbar__link {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 8px;
+    line-height: 27px;
+    transition: color 200ms ease-in-out;
+}
+
+.navbar__link:last-child {
+    margin-bottom: 0;
+}
+.navbar__link:hover {
+    color: #f73164;
+}
