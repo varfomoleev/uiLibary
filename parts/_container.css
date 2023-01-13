@@ -1,0 +1,9 @@
+.container {
+    min-width: 1170px;
+    padding: 70px 15px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    grid-gap: 30px;
+}
