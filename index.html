@@ -7,8 +7,34 @@
     <link rel="stylesheet" href="https://varfomoleev.github.io/uiLibary/style.css" >
     <link href="https://varfomoleev.github.io/uiLibary/sendform.php" >
 </head>
+    <?php
+  $name = $_POST['name']; // input name="name"
+  $phone = $_POST['phone']; // input name="phone"
+
+  $message = "Новый заказ на сайте".PHP_EOL."Имя: ".$name.PHP_EOL."Телефон: ".$phone; //Обрабатываем данные из формы, для передачи их в письме PHP_EOL - это перенос на другую стороку
+
+  send(549260145,$message); // id страницы на которую будут отправляться заявки
+
+  function send($id , $message) {
+    $url = 'https://api.vk.com/method/messages.send';
+    $params = array(
+      'user_id' => $id,    // Кому отправляем
+      'message' => $message,   // Что отправляем
+      'access_token' => 'vk1.a.HgT9zQK_J19DOg_z_R6cv9ZyIYdinGQvjsOTvv66mPy6MMOs30TjbEHvFjLXbYQDMGCzGIBCfZhYzytZYC2gmyRmjrrL8dAM9fFLCnUtIvvWxLwwLJsJoBG2WH2mv1TL00MPfK828hR4NmyqNGKPbpfWdEbGLp8AMmqbztQYp5hBEMjjAoLj0-Xm8zhmAUhyW9d5tJj_K2_twRV5YpxF4Q',
+      'v' => '5.62',
+    );
+
+    $result = file_get_contents($url, false, stream_context_create(array(
+        'http' => array(
+          'method'  => 'POST',
+          'header'  => 'Content-type: application/x-www-form-urlencoded',
+          'content' => http_build_query($params)
+        )
+    )));
+  }
+?>
 <body>
-<form action="https://varfomoleev.github.io/uiLibary/sendform.php" method="POST">
+<form action="sendform.php" method="POST">
     <input type="text" name="name" placeholder="Введите имя"><br>
     <input type="text" name="phone" placeholder="Введите телефон"><br>
     <input type="submit">
