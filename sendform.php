@@ -11,7 +11,7 @@
     $params = array(
       'user_id' => $id,    // Кому отправляем
       'message' => $message,   // Что отправляем
-      'access_token' => 'vk1.a.HgT9zQK_J19DOg_z_R6cv9ZyIYdinGQvjsOTvv66mPy6MMOs30TjbEHvFjLXbYQDMGCzGIBCfZhYzytZYC2gmyRmjrrL8dAM9fFLCnUtIvvWxLwwLJsJoBG2WH2mv1TL00MPfK828hR4NmyqNGKPbpfWdEbGLp8AMmqbztQYp5hBEMjjAoLj0-Xm8zhmAUhyW9d5tJj_K2_twRV5YpxF4Q',
+      'access_token' => 'xuyTOKEN',
       'v' => '5.62',
     );
 
